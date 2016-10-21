@@ -1,0 +1,154 @@
+body
+{
+    margin-top:2px;
+    background:blue;    
+    
+}
+
+.clear
+{
+    clear:both;
+}
+.main{
+    
+    width:100%;
+    border:1px solid black;
+}
+
+
+.header 
+{
+ width:100%;
+
+ }
+
+.contactme
+{
+    
+    background:black;
+    
+}
+
+.contactme h1
+{
+    color:white;
+    text-align:center;
+
+}
+
+.wrap{
+    background-color:white;  
+    width:100%;
+   
+    margin-top:10px; 
+ }
+
+
+.address
+{
+    width:320px;
+	margin-left:50px;
+	
+    float:left;
+	height:400px;
+
+}
+
+.address h3
+{
+    text-align:center;
+    color:black;
+    margin-bottom:10px;
+}
+
+ .fields
+ {
+     margin-bottom:12px;
+}
+
+
+
+
+.wrap_email
+{
+	
+  margin-left:30px;
+   float:left;
+    width:320px;
+   height:398px;
+   background:white;
+    border:none;
+   
+}
+
+.wrap_email h3
+{
+    color:black;
+    text-align:center;
+ }
+
+
+   
+.fields
+{
+   
+    width:400px;
+}
+
+.fields img
+{
+	background-color:none;
+	border:1px solid white;
+	margin-right:20px;
+	margin-left:5px;
+}
+
+.fields input[type="text"]
+{
+  width:250px;
+  padding:6px;
+  height:35px;
+  font-size:14px;
+    
+}
+
+.fields input[type="email"]
+{
+    width:250px;
+ height:35px;
+    padding:6px;
+    font-size:14px;
+    
+}
+
+.fields textarea
+{
+
+    width:250px;
+  
+    padding:6px;
+    font-size:14px;
+    
+}
+
+.fields input[type="submit"]
+{
+    width:250px;
+    border:none;
+    padding:6px;
+    font-size:20px;
+	 margin-left:57px;
+    font-weight:500;
+    background-color:green;
+    color:white;
+    
+}
+
+.fields input[type="submit"]:hover
+{
+    
+    background-color:white;
+    color:green;
+    
+}
+   
