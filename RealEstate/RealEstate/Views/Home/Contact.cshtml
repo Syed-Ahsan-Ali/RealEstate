@@ -1,17 +1,93 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="~/css/contact_style.css">
+
+
+</head>
+<body>
+
+    <div class="main">
+        <div class="header">
+            <img src="~/images/contact.jpg" width="1140" height="300">
+        </div>
+        <div class="contactme">
+        <center><h1> Contact Us</h1></center>
+        </div>
+        
+        <div class="wrap">
+
+            <div class="address">
+                <h3> Find Us On google</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.9465379498915!2d74.37404396363442!3d31.470656797725788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391906746a44dfef%3A0x17a1c3cdc20166d5!2sY+Block+Market!5e0!3m2!1sen!2s!4v1476965567543" width="300" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+               
+            </div>
+
+
+            
+            
+           
+                
+        <div class="address">
+                <h3>Contact And Place Details</h3>
+                <h4>Main Branch</h4>
+                <p> DHA Phase 3 Y Block</p>
+                <p>Commercial Market Inner Circle</p>
+
+                <h4>Main Branch</h4>
+                <p> DHA Phase 3 Y Block</p>
+                <p>Commercial Market Inner Circle</p>
+
+                <h4>Main Branch</h4>
+                <p> DHA Phase 3 Y Block</p>
+                <p>Commercial Market Inner Circle</p>
+                <h4>Main Branch</h4>
+                <p> DHA Phase 3 Y Block</p>
+                <p>Commercial Market Inner Circle</p>
+            </div>
+
+
+            
+            <div class="wrap_email">
+                <h3>Send Us Message</h3>
+                <form action="">
+                    
+                    <div class="fields">
+                        <img src="~/images/name.jpg" width="30" height="35"><input type="text" name="firstname" placeholder="Name" required>
+                    </div>
+
+                    <div class="fields">
+                        <img src="~/images/email.gif" width="30" height="35"><input type="email" name="Email" placeholder="Email" required>
+                    </div>
+
+                    <div class="fields">
+                            <img src="~/images/message.jpg" width="28" height="35" style="vertical-align:top;"><textarea name="comments" rows="8" cols="50" placeholder="Message" required></textarea>
+                    </div>
+
+                    <div class="fields">
+                        <input type="submit" value="Submit">
+                    </div>
+             </form>
+                </div>
+            <div class="clear"></div> 
+               
+            
+               
+        </div>
+       
+        </div>
+    <div class="clear"></div> 
+ 
+</body>
+</html>
