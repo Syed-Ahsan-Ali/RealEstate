@@ -26,5 +26,10 @@ namespace RealEstate.Controllers
 
             return View();
         }
+
+        public ActionResult Cards()
+        {
+            return View();
+        }
     }
 }
