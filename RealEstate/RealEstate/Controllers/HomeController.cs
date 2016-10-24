@@ -24,6 +24,10 @@ namespace RealEstate.Controllers
         {
             return View();
         }
+        public ActionResult OurTeam()
+        {
+            return View();
+        }
 
         public ActionResult Contact()
         {

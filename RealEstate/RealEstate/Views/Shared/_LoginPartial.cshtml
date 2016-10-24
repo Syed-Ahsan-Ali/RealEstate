@@ -17,6 +17,17 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li><a id="loginLink" data-target="#myModal" style="color:white;font-size:14px;">Login</a></li>
+        @*<li>
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control addon-right" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary icon-left" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+        </li>*@
+        @*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
     </ul>
 }
