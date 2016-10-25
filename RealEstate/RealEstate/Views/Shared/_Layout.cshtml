@@ -6,6 +6,104 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+ .question
+{
+     
+     float:left;
+	width:70%;
+	height:100px;
+	background:black;
+	color:white;
+}
+
+.question h2
+{
+    margin-top:30px;
+	margin-left:250px;
+	font-family:Times New Roman;
+}
+
+.button1
+{
+    width:30%;
+     float:left;
+
+	height:100px;
+	background:black;
+	color:white;
+}
+.button1 input[type="button"]
+{
+	 border-radius: 25px;
+	width:200px;
+	font-size:20px;
+	height:50px;
+    margin-top:20px;
+    color:black;
+     
+}
+
+footer
+{
+background:#404040;
+}
+.container
+{
+	
+	width:90%;
+	margin: 0 auto;
+}
+.Company
+{
+
+	float:left;
+	width:25%;
+	height:150px;
+	
+	
+}
+.Company h2
+{
+	color:White;
+	text-align:center;
+}
+.clear
+{
+	clear:both;
+}
+
+.information
+{
+	width:100%;
+
+}
+.information ul
+{
+	margin:0px;
+	padding:0px;
+}
+
+
+.information ul li
+{
+	list-style:none;
+	color:white;
+	text-align:center;
+}
+
+.information ul li img
+{
+margin-top:10px;
+
+}
+
+.information p
+{
+		color:white;
+}
+
+        </style>
 
 </head>
 <body>
@@ -45,9 +143,85 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    
+        <footer style="background-color:#404040;">
+            <div class="question">
+                <H2>Have You Some Question About Our Work? &nbsp;&nbsp;</H2>
+            </div>
+            <div class="button1"><input type="button" value="Asked About Us"></div>
+
+
+            <div style="clear:both"></div>
+
+
+            <div class="container">
+
+                <div class="Company">
+
+                    <h2>Who We Are</h2>
+                    <div class="information">
+                        <P>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dui et mi pulvinar porttitor.
+                            Morbi porttitor neque id luctus commodo.
+                        </P>
+                    </div>
+
+                </div>
+
+                <div class="Company">
+
+                    <h2>Company</h2>
+                    <div class="information">
+                        <ul>
+                            <li>About Us</li>
+                            <li>Our Services</li>
+                            <li>Contact</li>
+                            <li>Blog</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="Company">
+
+                    <h2>Contact Us</h2>
+                    <div class="information">
+                        <ul>
+                            <li>Phone: +041-234567</li>
+                            <li>Email : abc@gmail.com</li>
+
+                            <li>
+                                <a><img src="~/images/twitter.png" height="30"></a>
+                                <a><img src="~/images/facebook.png" height="30"></a>
+                                <a><img src="~/images/google_32.png" height="30"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="Company">
+
+                    <h2>Address</h2>
+                    <div class="information">
+                        <ul>
+                            <li>Y Block Market</li>
+                            <li>DHA Phase  3</li>
+                            <li>Inner Circle</li>
+                            <li>Shop No 51</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div style="clear:both"></div>
+
+
+                <center><p>&copy; @DateTime.Now.Year - My ASP.NET Application</p></center>
+            </div>
         </footer>
     </div>
 
