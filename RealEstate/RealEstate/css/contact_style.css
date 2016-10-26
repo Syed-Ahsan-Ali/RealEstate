@@ -1,7 +1,7 @@
 body
 {
-    margin-top:2px;
-    background:blue;    
+    
+background-color:#98AFC7;
     
 }
 
@@ -12,7 +12,7 @@ body
 .main{
     
     width:100%;
-    border:1px solid black;
+  
 }
 
 
@@ -24,14 +24,18 @@ body
 
 .contactme
 {
-    
-    background:black;
+    margin:0px;
+   padding:0px;
+  
+    background:white;
     
 }
 
 .contactme h1
 {
-    color:white;
+   margin:0px;
+   padding:0px;
+    color:black;
     text-align:center;
 
 }
@@ -40,7 +44,7 @@ body
     background-color:white;  
     width:100%;
    
-    margin-top:10px; 
+  
  }
 
 
