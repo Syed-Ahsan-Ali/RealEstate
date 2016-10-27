@@ -29,6 +29,11 @@ namespace RealEstate.Controllers
             return View();
         }
 
+        public ActionResult Agent()
+        {
+            return View();
+        }
+
         public ActionResult Agents()
         {
             return View();
