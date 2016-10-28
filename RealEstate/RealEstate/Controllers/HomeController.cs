@@ -39,6 +39,11 @@ namespace RealEstate.Controllers
             return View();
         }
 
+        public ActionResult Postproperty()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
