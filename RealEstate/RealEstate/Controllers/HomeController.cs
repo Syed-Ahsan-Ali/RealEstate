@@ -33,8 +33,12 @@ namespace RealEstate.Controllers
         {
             return View();
         }
-
         public ActionResult Agents()
+        {
+            return View();
+        }
+
+        public ActionResult Development()
         {
             return View();
         }
