@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EstateDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Property_Adress_Id" />
+          </Key>
+          <Property Name="Property_Adress_Id" Type="int" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Plot_Number" Type="varbinary" MaxLength="50" />
+          <Property Name="Area_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Floor_No" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Buyer">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="Property_Type" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="Propert_Id" />
+          </Key>
+          <Property Name="Propert_Id" Type="int" Nullable="false" />
+          <Property Name="Feature_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="Property_Id" />
+          </Key>
+          <Property Name="Property_Id" Type="int" Nullable="false" />
+          <Property Name="Property_Type" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Adress_Id" Type="int" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Date" Type="date" />
+          <Property Name="No_Of_Rooms" Type="int" />
+          <Property Name="Area_Size" Type="nchar" MaxLength="10" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Property_image" Type="image" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="Property_Id" />
+          </Key>
+          <Property Name="Property_Id" Type="int" Nullable="false" />
+          <Property Name="Room_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Area" Type="varchar" MaxLength="50" />
+          <Property Name="Room_Image" Type="image" />
+        </EntityType>
+        <EntityType Name="Seller">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="Property_Id" Type="int" />
+          <Property Name="Post_Property_For" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="User_Type" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Buyer_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Buyer" Type="Self.Buyer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="Buyer">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feature_Property">
+          <End Role="Property" Type="Self.Property" Multiplicity="1" />
+          <End Role="Feature" Type="Self.Feature" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="Property_Id" />
+            </Principal>
+            <Dependent Role="Feature">
+              <PropertyRef Name="Propert_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_Adress">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Property" Type="Self.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Property_Adress_Id" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="Property_Adress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="1" />
+          <End Role="Property" Type="Self.Property" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="Property_Id" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="Property_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seller_Property">
+          <End Role="Property" Type="Self.Property" Multiplicity="1" />
+          <End Role="Seller" Type="Self.Seller" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="Property_Id" />
+            </Principal>
+            <Dependent Role="Seller">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seller_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Seller" Type="Self.Seller" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="Seller">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EstateDbModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Buyer" EntityType="Self.Buyer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feature" EntityType="Self.Feature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seller" EntityType="Self.Seller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Buyer_Users" Association="Self.FK_Buyer_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Buyer" EntitySet="Buyer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feature_Property" Association="Self.FK_Feature_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="Feature" EntitySet="Feature" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_Adress" Association="Self.FK_Property_Adress">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Property" EntitySet="Property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_Room" Association="Self.FK_Property_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="Property" EntitySet="Property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seller_Property" Association="Self.FK_Seller_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="Seller" EntitySet="Seller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seller_Users" Association="Self.FK_Seller_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Seller" EntitySet="Seller" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EstateDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EstateDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="EstateDbModel.Address" />
+          <EntitySet Name="Buyers" EntityType="EstateDbModel.Buyer" />
+          <EntitySet Name="Features" EntityType="EstateDbModel.Feature" />
+          <EntitySet Name="Properties" EntityType="EstateDbModel.Property" />
+          <EntitySet Name="Rooms" EntityType="EstateDbModel.Room" />
+          <EntitySet Name="Sellers" EntityType="EstateDbModel.Seller" />
+          <EntitySet Name="sysdiagrams" EntityType="EstateDbModel.sysdiagram" />
+          <EntitySet Name="Users" EntityType="EstateDbModel.User" />
+          <AssociationSet Name="FK_Property_Adress" Association="EstateDbModel.FK_Property_Adress">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Property" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buyer_Users" Association="EstateDbModel.FK_Buyer_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Buyer" EntitySet="Buyers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feature_Property" Association="EstateDbModel.FK_Feature_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Feature" EntitySet="Features" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_Room" Association="EstateDbModel.FK_Property_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="Property" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seller_Property" Association="EstateDbModel.FK_Seller_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Seller" EntitySet="Sellers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seller_Users" Association="EstateDbModel.FK_Seller_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Seller" EntitySet="Sellers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Property_Adress_Id" />
+          </Key>
+          <Property Name="Property_Adress_Id" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Plot_Number" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="Area_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Floor_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Properties" Relationship="EstateDbModel.FK_Property_Adress" FromRole="Address" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Buyer">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="Property_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="EstateDbModel.FK_Buyer_Users" FromRole="Buyer" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="Propert_Id" />
+          </Key>
+          <Property Name="Propert_Id" Type="Int32" Nullable="false" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Property" Relationship="EstateDbModel.FK_Feature_Property" FromRole="Feature" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="Property_Id" />
+          </Key>
+          <Property Name="Property_Id" Type="Int32" Nullable="false" />
+          <Property Name="Property_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Adress_Id" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Date" Type="DateTime" Precision="0" />
+          <Property Name="No_Of_Rooms" Type="Int32" />
+          <Property Name="Area_Size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Property_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Address" Relationship="EstateDbModel.FK_Property_Adress" FromRole="Property" ToRole="Address" />
+          <NavigationProperty Name="Feature" Relationship="EstateDbModel.FK_Feature_Property" FromRole="Property" ToRole="Feature" />
+          <NavigationProperty Name="Room" Relationship="EstateDbModel.FK_Property_Room" FromRole="Property" ToRole="Room" />
+          <NavigationProperty Name="Seller" Relationship="EstateDbModel.FK_Seller_Property" FromRole="Property" ToRole="Seller" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="Property_Id" />
+          </Key>
+          <Property Name="Property_Id" Type="Int32" Nullable="false" />
+          <Property Name="Room_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Room_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Property" Relationship="EstateDbModel.FK_Property_Room" FromRole="Room" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Seller">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="Property_Id" Type="Int32" />
+          <Property Name="Post_Property_For" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Property" Relationship="EstateDbModel.FK_Seller_Property" FromRole="Seller" ToRole="Property" />
+          <NavigationProperty Name="User" Relationship="EstateDbModel.FK_Seller_Users" FromRole="Seller" ToRole="User" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Buyer" Relationship="EstateDbModel.FK_Buyer_Users" FromRole="User" ToRole="Buyer" />
+          <NavigationProperty Name="Seller" Relationship="EstateDbModel.FK_Seller_Users" FromRole="User" ToRole="Seller" />
+        </EntityType>
+        <Association Name="FK_Property_Adress">
+          <End Type="EstateDbModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="EstateDbModel.Property" Role="Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Property_Adress_Id" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="Property_Adress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buyer_Users">
+          <End Type="EstateDbModel.User" Role="User" Multiplicity="1" />
+          <End Type="EstateDbModel.Buyer" Role="Buyer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="Buyer">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feature_Property">
+          <End Type="EstateDbModel.Property" Role="Property" Multiplicity="1" />
+          <End Type="EstateDbModel.Feature" Role="Feature" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="Property_Id" />
+            </Principal>
+            <Dependent Role="Feature">
+              <PropertyRef Name="Propert_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_Room">
+          <End Type="EstateDbModel.Room" Role="Room" Multiplicity="1" />
+          <End Type="EstateDbModel.Property" Role="Property" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="Property_Id" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="Property_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seller_Property">
+          <End Type="EstateDbModel.Property" Role="Property" Multiplicity="1" />
+          <End Type="EstateDbModel.Seller" Role="Seller" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="Property_Id" />
+            </Principal>
+            <Dependent Role="Seller">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seller_Users">
+          <End Type="EstateDbModel.User" Role="User" Multiplicity="1" />
+          <End Type="EstateDbModel.Seller" Role="Seller" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="Seller">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EstateDbModelStoreContainer" CdmEntityContainer="EstateDbEntities">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="EstateDbModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Floor_No" ColumnName="Floor_No" />
+                <ScalarProperty Name="Area_Name" ColumnName="Area_Name" />
+                <ScalarProperty Name="Plot_Number" ColumnName="Plot_Number" />
+                <ScalarProperty Name="Property_Name" ColumnName="Property_Name" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Property_Adress_Id" ColumnName="Property_Adress_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buyers">
+            <EntityTypeMapping TypeName="EstateDbModel.Buyer">
+              <MappingFragment StoreEntitySet="Buyer">
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Property_Type" ColumnName="Property_Type" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Features">
+            <EntityTypeMapping TypeName="EstateDbModel.Feature">
+              <MappingFragment StoreEntitySet="Feature">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Propert_Id" ColumnName="Propert_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="EstateDbModel.Property">
+              <MappingFragment StoreEntitySet="Property">
+                <ScalarProperty Name="Property_image" ColumnName="Property_image" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Area_Size" ColumnName="Area_Size" />
+                <ScalarProperty Name="No_Of_Rooms" ColumnName="No_Of_Rooms" />
+                <ScalarProperty Name="Property_Date" ColumnName="Property_Date" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Property_Adress_Id" ColumnName="Property_Adress_Id" />
+                <ScalarProperty Name="Property_Type" ColumnName="Property_Type" />
+                <ScalarProperty Name="Property_Id" ColumnName="Property_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="EstateDbModel.Room">
+              <MappingFragment StoreEntitySet="Room">
+                <ScalarProperty Name="Room_Image" ColumnName="Room_Image" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Room_Name" ColumnName="Room_Name" />
+                <ScalarProperty Name="Property_Id" ColumnName="Property_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sellers">
+            <EntityTypeMapping TypeName="EstateDbModel.Seller">
+              <MappingFragment StoreEntitySet="Seller">
+                <ScalarProperty Name="Post_Property_For" ColumnName="Post_Property_For" />
+                <ScalarProperty Name="Property_Id" ColumnName="Property_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EstateDbModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EstateDbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
