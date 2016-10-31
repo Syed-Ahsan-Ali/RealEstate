@@ -123,7 +123,9 @@ margin-top:10px;
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
+                            <li>@Html.ActionLink("Our Team", "OurTeam", "Home")</li>
+                            <li>@Html.ActionLink("History", "History", "Home")</li>
+                            <li>@Html.ActionLink("Development", "Development", "Home")</li>
                             <li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
@@ -133,7 +135,6 @@ margin-top:10px;
                         </ul>
                     </li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("History", "History", "Home")</li>
                     <li>@Html.ActionLink("Agent", "Agent", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -141,7 +142,7 @@ margin-top:10px;
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="">
         @RenderBody()
     
         <footer style="background-color:#404040;">
