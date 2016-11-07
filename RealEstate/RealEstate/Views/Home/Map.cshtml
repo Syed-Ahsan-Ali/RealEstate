@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "Map";
+}
+
+
+@{
+    ViewBag.Title = "Maps";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="~/css/Maps.css" type="text/css" rel="stylesheet" />
+    <script>
+$(document).ready(function(){
+	$(".open").click(function(){
+	$(".page_background").fadeIn();
+	$(".popup").fadeIn();
+	return false;
+	});
+
+
+	$(".close").click(function(){
+	$(".page_background").fadeOut();
+	$(".popup").fadeOut();
+	return false;
+	});
+});
+    </script>
+</head>
+
+
+
+<body>
+
+    <!--POP UP MESSAGE-->
+    <div class="page_background">
+
+    </div>
+
+    <div class="popup">
+
+        <span class="close">&times;</span><br>
+        <center><h1>Canal View Society</h1></center>
+        <img src="~/images/h1.jpg" width="1040" height="700" />
+
+    </div>
+    <div class="maps_container">
+
+        <div class="propertySearch">
+            Property Search
+            <hr style="height:5px;border:none;color:#333;background-color:#333;margin-top:0px;" />
+            <div class="search_detail">
+
+
+                <select>
+                    <option value="volvo" selected>--Please Select City--</option>
+                    <option value="saab">Lahore</option>
+                    <option value="mercedes">Rawalpindi</option>
+                    <option value="audi">Karachi</option>
+                    <option value="audi">Islamabad</option>
+                </select>
+
+                <select>
+                    <option value="volvo" selected>--Please Select Society--</option>
+                    <option value="saab">DHA</option>
+                    <option value="mercedes">Iqbal Town</option>
+                    <option value="audi">Muslim Town</option>
+                    <option value="audi">Gajjumatta</option>
+                </select>
+
+                <select>
+                    <option value="volvo" selected>--Please Select Property Type--</option>
+                    <option value="saab">Apartment</option>
+                    <option value="mercedes">Flats</option>
+                    <option value="audi">Houses</option>
+                    <option value="audi">Market</option>
+                </select>
+
+                <select class="select2">
+                    <option value="volvo" selected>--Min Price--</option>
+                    <option value="saab">1000</option>
+                    <option value="mercedes">10000</option>
+                    <option value="audi">10000000</option>
+                    <option value="audi">20000000</option>
+                </select>
+                <select class="select2">
+                    <option value="volvo" selected>--Max Price--</option>
+                    <option value="saab">1000</option>
+                    <option value="mercedes">10000</option>
+                    <option value="audi">10000000</option>
+                    <option value="audi">20000000</option>
+                </select>
+                <input type="text" name="min_size" placeholder="Min Size (Marla)">
+                <input type="text" name="min_size" placeholder="Max Size (kanal)">
+
+
+                <select>
+
+                    <option value="volvo" selected>--Please Select Contract Type--</option>
+                    <option value="saab">Rent</option>
+                    <option value="mercedes">Sale</option>
+
+
+                </select>
+
+                <input type="submit" value="Submit">
+            </div>
+
+
+
+
+
+
+
+
+            <!--Property Search Ending-->
+        </div>
+
+        <div class="maps">
+            <strong>Map Search</strong><select>
+                <option value="volvo" selected>--Please Select City--</option>
+                <option value="saab">Lahore</option>
+                <option value="mercedes">Rawalpindi</option>
+                <option value="audi">Karachi</option>
+                <option value="audi">Islamabad</option>
+            </select>
+
+            <select>
+                <option value="volvo" selected>--Please Select Society--</option>
+                <option value="saab">DHA</option>
+                <option value="mercedes">Iqbal Town</option>
+                <option value="audi">Muslim Town</option>
+                <option value="audi">Gajjumatta</option>
+            </select>
+            <input type="button" Value="Search">
+            <hr style="height:5px;border:none;color:#333;background-color:#333;margin-top:0px;" />
+
+        </div>
+        <div class="mapspics">
+
+
+            <div class="Card">
+                <a href="#" class="open">Lahore</a><br />
+                <a href="#" class="open">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </a><input type="button" value="Canal View Society">
+            </div>
+
+            <div class="Card">
+                <a href="#" class="open">Lahore</a><br />
+                <a href="#" class="open">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </a><input type="button" value="Canal View Society">
+            </div>
+
+            <div class="Card">
+                <a href="#" class="open">Lahore</a><br />
+                <a href="#" class="open">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </a><input type="button" value="Canal View Society">
+            </div>
+
+            <div class="Card">
+                <a href="#" class="open">Lahore</a><br />
+                <a href="#" class="open">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </a><input type="button" value="Canal View Society">
+            </div>
+
+            <div class="Card">
+                <a href="#" class="open">Lahore</a><br />
+                <a href="#" class="open">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </a><input type="button" value="Canal View Society">
+            </div>
+
+            <div class="Card">
+                <a href="#" class="open">Lahore</a><br />
+                <a href="#" class="open">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </a><input type="button" value="Canal View Society">
+            </div>
+
+
+
+
+
+            <div style="clear:both"></div>
+        </div>
+
+        <div style="clear:both"></div>
+        <!--Maps Ending-->
+    </div>
+
+
+
+</body>
+
+</html>
+
+
