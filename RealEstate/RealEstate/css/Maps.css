@@ -1,0 +1,166 @@
+﻿body {
+}
+       .maps_container {
+            width: 80%;
+                    
+            margin: 0 auto;
+        }
+
+        .propertySearch {
+            float: left;
+            width: 22%;
+           
+            background: white;
+             font-size: 20px;
+            font-weight: bold;
+        }
+
+        
+
+
+        .search_detail {
+            background: grey;
+            font-size: 14px;
+        }
+
+            .search_detail select {
+                margin-top: 20px;
+                margin-left: 4%;
+                background: none repeat scroll 0 0 #FFFFFF;
+                border: 1px solid #E5E5E5;
+                border-radius: 5px 5px 5px 5px;
+                box-shadow: 0 0 10px #E8E8E8 inset;
+                height: 30px;
+                text-align-last: center;
+                width: 92%;
+            }
+
+            .search_detail input[type="text"] {
+                margin-top: 20px;
+                margin-left: 4%;
+                background: none repeat scroll 0 0 #FFFFFF;
+                border: 1px solid #E5E5E5;
+                border-radius: 5px 5px 5px 5px;
+                box-shadow: 0 0 10px #E8E8E8 inset;
+                height: 30px;
+                width: 44%;
+                text-align: center;
+            }
+
+            .search_detail input[type="submit"] {
+                margin-top: 20px;
+                margin-left: 4%;
+                border-radius: 5px 5px 5px 5px;
+                border: none;
+                height: 30px;
+                width: 92%;
+                font-size: 20px;
+                margin-bottom: 20px;
+                background: gray;
+                border: 1px solid #E5E5E5;
+                font-weight: bold;
+                color: white;
+                box-shadow: 0 0 10px #E8E8E8 inset;
+                text-align: center;
+            }
+
+        .maps {
+            float: left;
+            margin-left: 20px;
+            background: white;
+             font-size: 20px;
+            width: 75%;
+        }
+
+            .maps select {
+                color: white;
+                padding-top: 0px;
+                margin-left: 6%;
+                background: gray;
+                border: 1px solid #E5E5E5;
+                box-shadow: 0 0 10px #E8E8E8 inset;
+                height: 25px;
+                font-size:14px;
+                text-align-last: center;
+                width: 200px;
+            }
+
+            .maps input[type="button"] {
+                margin-left: 6px;
+                background-color: gray;
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 40px;
+            }
+
+        .mapspics {
+            margin-top: 2px;
+            float: left;
+            margin-left: 20px;
+            background: gray;
+            width: 75%;
+        }
+
+        .Card {
+            text-align: center;
+            margin: 5px;
+            float: left;
+            height: 200px;
+            background: white;
+            width: 255px;
+        }
+
+            .Card input[type="button"] {
+                background-color: grey;
+                border: 1px solid #E5E5E5;
+                box-shadow: 0 0 10px #E8E8E8 inset;
+                color: white;
+                height: 30px;
+                width: 150px;
+                border: 1px solid black;
+                font-size: 14px;
+            }
+            /*pop up massege*/
+
+            .page_background
+            {
+	width:100%;
+	height:900px;
+	top:0;
+	left:0;
+	background:#000;
+	opacity:.8;
+	z-index:1000;
+	cursor:pointer;
+	position:fixed;
+	display:none;
+
+}
+.popup
+{
+	position:absolute;
+	background:#fff;
+	width:80%;
+	margin-left:10%;
+	margin-top:0px;
+	padding:20px;
+	z-index:1500;
+	display:none;
+
+}
+
+.close
+{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:1px solid black;
+	text-align:center;
+	line-height:30px;
+	font-size:30px;
+	float:right;
+	cursor:pointer;
+	
+
+}
