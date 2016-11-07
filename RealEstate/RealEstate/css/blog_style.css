@@ -1,0 +1,104 @@
+﻿        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .Post_Container {
+            float: left;
+            width: 70%;
+            padding: 20px;
+            border-bottom: 4px solid red;
+            color: white;
+            background: black;
+        }
+
+            .Post_Container a {
+                color: white;
+                text-decoration: none;
+            }
+
+                .Post_Container a:hover {
+                    color: red;
+                    text-decoration: underline;
+                }
+
+        .Post_Detail {
+            height: 53px;
+            line-height: 53px;
+            color: white;
+            padding-left: 20px;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+            .Post_Detail ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                height: 40px;
+            }
+
+                .Post_Detail ul li {
+                    display: block;
+                    padding: 10px 16px;
+                    color: gray;
+                    margin-left: 4px;
+                    display: inline;
+                    background: white;
+                }
+
+
+            .Post_Detail a {
+                text-decoration: none;
+                color: black;
+            }
+
+
+        .sidebar {
+            float: left;
+            width: 22%;
+            padding: 20px;
+            border-left: 4px solid white;
+            background: black;
+        }
+
+        .Recent_Post {
+            height: 53px;
+            line-height: 53px;
+            color: white;
+            padding-left: 30px;
+            font-size: 25px;
+            border-bottom: 4px solid white;
+            background: black;
+        }
+
+
+        .Post {
+            margin-bottom: 10px;
+        }
+
+
+            .Post ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                .Post ul li {
+                    padding: 10px;
+                    background: black;
+                    display: block;
+                    border-bottom: 2px solid white;
+                    color: white;
+                }
+
+                    .Post ul li a {
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                        .Post ul li a:hover {
+                            color: red;
+                            text-decoration: underline;
+                        }
