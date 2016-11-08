@@ -7,103 +7,85 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <style>
- .question
-{
-     
-     float:left;
-	width:70%;
-	height:100px;
-	background:black;
-	color:white;
-}
+        .question {
+            float: left;
+            width: 70%;
+            height: 100px;
+            background: black;
+            color: white;
+        }
 
-.question h2
-{
-    margin-top:30px;
-	margin-left:250px;
-	font-family:Times New Roman;
-}
+            .question h2 {
+                margin-top: 30px;
+                margin-left: 250px;
+                font-family: Times New Roman;
+            }
 
-.button1
-{
-    width:30%;
-     float:left;
+        .button1 {
+            width: 30%;
+            float: left;
+            height: 100px;
+            background: black;
+            color: white;
+        }
 
-	height:100px;
-	background:black;
-	color:white;
-}
-.button1 input[type="button"]
-{
-	 border-radius: 25px;
-	width:200px;
-	font-size:20px;
-	height:50px;
-    margin-top:20px;
-    color:black;
-     
-}
+            .button1 input[type="button"] {
+                border-radius: 25px;
+                width: 200px;
+                font-size: 20px;
+                height: 50px;
+                margin-top: 20px;
+                color: black;
+            }
 
-footer
-{
-background:#404040;
-}
-.container
-{
-	
-	width:90%;
-	margin: 0 auto;
-}
-.Company
-{
+        footer {
+            background: #404040;
+        }
 
-	float:left;
-	width:25%;
-	height:150px;
-	
-	
-}
-.Company h2
-{
-	color:White;
-	text-align:center;
-}
-.clear
-{
-	clear:both;
-}
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
 
-.information
-{
-	width:100%;
+        .Company {
+            float: left;
+            width: 25%;
+            height: 150px;
+        }
 
-}
-.information ul
-{
-	margin:0px;
-	padding:0px;
-}
+            .Company h2 {
+                color: White;
+                text-align: center;
+            }
+
+        .clear {
+            clear: both;
+        }
+
+        .information {
+            width: 100%;
+        }
+
+            .information ul {
+                margin: 0px;
+                padding: 0px;
+            }
 
 
-.information ul li
-{
-	list-style:none;
-	color:white;
-	text-align:center;
-}
+                .information ul li {
+                    list-style: none;
+                    color: white;
+                    text-align: center;
+                }
 
-.information ul li img
-{
-margin-top:10px;
+                    .information ul li img {
+                        margin-top: 10px;
+                    }
 
-}
-
-.information p
-{
-		color:white;
-}
-
-        </style>
+            .information p {
+                color: white;
+            }
+    </style>
 
 </head>
 <body>
@@ -126,6 +108,7 @@ margin-top:10px;
                             <li>@Html.ActionLink("Our Team", "OurTeam", "Home")</li>
                             <li>@Html.ActionLink("History", "History", "Home")</li>
                             <li>@Html.ActionLink("Development", "Development", "Home")</li>
+                            <li>@Html.ActionLink("SearchBoxAndNotification", "SearchBoxAndNotification", "Home")</li>
                             <li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
@@ -144,7 +127,7 @@ margin-top:10px;
     </div>
     <div class="">
         @RenderBody()
-    
+
         <footer style="background-color:#404040;">
             <div class="question">
                 <H2>Have You Some Question About Our Work? &nbsp;&nbsp;</H2>
