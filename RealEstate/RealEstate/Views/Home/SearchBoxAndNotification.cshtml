@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "SearchBoxAndNotification";
+}
+
+<h2>SearchBoxAndNotification</h2>
+<div class="btn-group dropdown dropdown-notifications sw-open">
+    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <span><i data-count="4" class="glyphicon glyphicon-bell notification-icon "></i></span>
+        <span class="badge" style="background:red;position:relative;right:-10px;top:-7px;">6</span>
+    </button>
+
+    <ul class="dropdown-menu inner" role="menu">
+        <li>
+            <div class="notification-item">
+                <h4 class="item-title" style="padding-left:15px;">Recent Notifications(3)&emsp;&emsp;&emsp;</h4>
+            </div><!-- /dropdown-toolbar -->
+
+        </li>
+        <li class="divider">
+        <li>
+            <a class="content">
+                <div class="notification-item">
+                    <h5 class="item-title">Evaluation Deadline&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  1 • day ago</h5>
+                    <p class="item-info">Marketing 101, Video Assignment</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="content"><div class="notification-item"><h5>abc</h5></div></a>
+        </li>
+        <li>
+            <div class="notification-item">
+                <a style="padding-left:130px;" href="#"> View All</a>
+            </div><!-- /dropdown-toolbar -->
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*SearchBar*@
+<div id="search_properties-2" class="navbar col-lg-3" style="background-color:lightgray">
+    <div class="sidebar-widget-title">
+        <h3 class="widgettitle">Search Property</h3>
+    </div>
+    <div class="full-search-form">
+        <form method="get" action="http://chohanestate.com/">
+            <label>Society</label>
+            <select name="property_city" class="form-control search_by_keyword">
+                <option selected=""></option>
+                <option value="gujranwala">Gujranwala</option>
+                <option value="canal-view-lahore">Canal View Lahore</option>
+                <option value="davis-road-lahore">Davis Road Lahore</option>
+                <option value="dha-eme-society">DHA EME Society</option>
+                <option value="fazaia-housing-society-lahore">Fazaia Housing Society Lahore</option>
+                <option value="shadman">Shadman</option>
+                <option value="paragon-city-lahore">Paragon City Lahore</option>
+                <option value="dha-main-boulevard">DHA Main Boulevard</option>
+                <option value="faisal-town">Faisal Town</option>
+                <option value="dha-multan">DHA Multan</option>
+                <option value="askar-11-lahore">Askar 11 Lahore</option>
+                <option value="rehman-garden-town-lahore">Rehman garden Town Lahore</option>
+                <option value="multan-road-lahore">Multan Road Lahore</option>
+                <option value="eden-avenue">Eden Avenue</option>
+                <option value="murree">Murree</option>
+                <option value="kasur-road">kasur road</option>
+                <option value="the-mall-lahore">The Mall Lahore</option>
+                <option value="valancia-town-lahore">Valancia Town Lahore</option>
+                <option value="bahria-town-lahore">Bahria Town Lahore</option>
+                <option value="ferozepur-road">Ferozepur Road</option>
+                <option value="eden-city">Eden City</option>
+                <option value="dha-rahbar-lahore">DHA Rahbar Lahore</option>
+                <option value="lake-city">Lake City</option>
+                <option value="thokar-niaz-baig-lahore">Thokar Niaz Baig Lahore</option>
+                <option value="garden-town">Garden Town</option>
+                <option value="punjab-coop-housing-society">Punjab Coop Housing Society</option>
+                <option value="sunder-industrial-area">Sunder Industrial Area</option>
+                <option value="pia-revenue-society">PIA / Revenue Society</option>
+                <option value="askari">Askari</option>
+                <option value="allama-iqbal-town">Allama Iqbal Town</option>
+                <option value="cavalry-ground-lahore">Cavalry Ground Lahore</option>
+                <option value="hbfc-society-lahore">HBFC Society Lahore</option>
+                <option value="dha-phase-9">DHA Phase 9</option>
+                <option value="bedian-road">Bedian Road</option>
+                <option value="wapda-town">Wapda Town</option>
+                <option value="tech-society-lahore">Tech Society Lahore</option>
+                <option value="johar-town-lahore">Johar Town Lahore</option>
+                <option value="model-town">Model Town</option>
+                <option value="dha-town">DHA Town</option>
+                <option value="state-life-housing-society-i-ii">State Life Housing Society I &amp; II</option>
+                <option value="sui-gas-society">Sui Gas Society</option>
+                <option value="dha-phase-9-prism">DHA Phase 9 Prism</option>
+                <option value="dha-phase-2">DHA Phase 2</option>
+                <option value="lahore-cantt">Lahore Cantt.</option>
+                <option value="gulberg">Gulberg</option>
+                <option value="others">Others</option>
+                <option value="dha-phase-1">DHA Phase 1</option>
+                <option value="dha-phase-7">DHA Phase 7</option>
+                <option value="dha-phase-3">DHA Phase 3</option>
+                <option value="dha-phase-8">DHA Phase 8</option>
+                <option value="dha-phase-4">DHA Phase 4</option>
+                <option value="islamabad">Islamabad</option>
+                <option value="dha-phase-6">DHA Phase 6</option>
+                <option value="dha-phase-5">DHA Phase 5</option>
+            </select>
+            <div style="padding-top:10px">
+                <label>Property Type</label>
+                <select name="propery_type" class="form-control search_by_keyword">
+                    <option selected=""></option>
+                    <option value="apartment">Apartment</option>
+                    <option value="industrial-plot">Industrial Plot</option>
+                    <option value="factory">Factory</option>
+                    <option value="10-marla">10 Marla</option>
+                    <option value="4-kanal">4 Kanal</option>
+                    <option value="shop">Shop</option>
+                    <option value="ware-house">Warehouse</option>
+                    <option value="property-of-the-day">Property of the Day</option>
+                    <option value="commercial-land">Commercial Land</option>
+                    <option value="farm-house">Farm House</option>
+                    <option value="industrialagri-land">Industrial/Agri-Land</option>
+                    <option value="2-kanal">2 Kanal</option>
+                    <option value="agri-land">Agri Land</option>
+                    <option value="10-marla-plot">10 Marla</option>
+                    <option value="5-marla">5 Marla</option>
+                    <option value="furnished">Furnished</option>
+                    <option value="portion">Portion</option>
+                    <option value="1-kanal">1 Kanal</option>
+                    <option value="commercial-building">Commercial Building</option>
+                    <option value="commercial-plot">Commercial Plot</option>
+                    <option value="rent-commercial">Rent Commercial</option>
+                    <option value="used-house">Used House</option>
+                    <option value="full-house">Full House</option>
+                    <option value="rent-residential">Rent Residential</option>
+                    <option value="residential-plot">Residential Plot</option>
+                    <option value="brand-new-house">Brand New House</option>
+                    <option value="plot">Plot</option>
+                    <option value="house">House</option>
+                </select>
+            </div>
+            <div style="padding-top:10px">
+                <label>Min Area (Marla)</label>
+                <input type="text" name="min_area" class="form-control" placeholder="Any">
+            </div>
+            <div style="padding-top:10px">
+                <label>Max Area (Marla)</label>
+                <input type="text" name="max_area" class="form-control" placeholder="Any">
+            </div>
+            <div style="padding-top:10px">
+                <label>Contract</label>
+                <select name="propery_contract_type" class="form-control selectpicker">
+                    <option selected=""></option>
+                    <option value="rent">Rent</option>
+                    <option value="sale">Sale</option>
+                </select>
+            </div>
+            <div style="padding-top:10px">
+                <label>State</label>
+                <select name="propery_location" class="form-control selectpicker">
+                    <option selected=""></option>
+                    <option value="0">Pakistan</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Sindh">Sindh</option>
+                    <option value="North-West Frontier">North-West Frontier</option>
+                    <option value="Balochistan">Balochistan</option>
+                    <option value="Northern Areas">Northern Areas</option>
+                    <option value="Federally Administered Tribal Areas">Federally Administered Tribal Areas</option>
+                    <option value="Islamabad">Islamabad</option>
+                </select>
+            </div>
+            <div style="padding-top:10px">
+                <label>Min Price</label>
+                <select name="min_price" class="form-control selectpicker"><option selected="">Any</option><option value="1000"> 1000</option><option value="5000"> 5000</option><option value="10000"> 10000</option><option value="50000"> 50000</option><option value="100000"> 100000</option><option value="3000000"> 3000000</option><option value="5000000"> 5000000</option><option value="10000000"> 10000000</option></select>
+            </div>
+            <div style="padding-top:10px">
+                <label>Max Price</label>
+                <select name="max_price" class="form-control selectpicker"><option selected="">Any</option><option value="1000"> 1000</option><option value="5000"> 5000</option><option value="10000"> 10000</option><option value="50000"> 50000</option><option value="100000"> 100000</option><option value="3000000"> 3000000</option><option value="5000000"> 5000000</option><option value="10000000"> 10000000</option></select>
+            </div>
+            <div style="padding-top:10px">
+                <label>Search By</label>
+                <select name="search_by" class="form-control selectpicker"><option selected=""></option><option value="Id">Id</option><option value="Address">Address</option><option value="Pincode">Pincode</option></select>
+                <div style="padding-top:10px">
+                    <label>keyword Please enter</label>
+                    <input type="text" name="search_by_keyword" class="form-control search_by_keyword" placeholder="">
+                </div>
+            </div>
+            <div style="padding-top:10px;padding-bottom:10px;">
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
