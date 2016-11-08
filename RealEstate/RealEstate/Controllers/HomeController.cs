@@ -60,6 +60,10 @@ namespace RealEstate.Controllers
             return View();
         }
 
+        public ActionResult SearchBoxAndNotification()
+        {
+            return View();
+        }
         public ActionResult Map()
         {
             return View();
@@ -68,7 +72,6 @@ namespace RealEstate.Controllers
         {
             return View();
         }
-
 
     }
 }
