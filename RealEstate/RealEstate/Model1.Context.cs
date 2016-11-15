@@ -13,10 +13,10 @@ namespace RealEstate
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EstateDbEntities : DbContext
+    public partial class EstateDbEntities3 : DbContext
     {
-        public EstateDbEntities()
-            : base("name=EstateDbEntities")
+        public EstateDbEntities3()
+            : base("name=EstateDbEntities3")
         {
         }
     
@@ -26,6 +26,7 @@ namespace RealEstate
         }
     
         public virtual DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Agent> Agents { get; set; }
         public virtual DbSet<Buyer> Buyers { get; set; }
         public virtual DbSet<Feature> Features { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
