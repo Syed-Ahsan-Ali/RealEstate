@@ -1,38 +1,19 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "History";
 }
 
 <body style="background-color:ghostwhite;">
-    <h2 style="font-family:'Century Gothic';color:dodgerblue;"><b>Our History</b></h2>
+    <h2 style="font-family:'Century Gothic';color:dodgerblue;"><b>@Model.Title</b></h2>
 
 
     <div class="paragraphs">
         <div class="row">
             <div class="span4">
-                <img style="float:right" src="~/images/pic1.jpg" />
-                @*<div class="content-heading">*@
+                <img style="float:right" src="@Url.Content(Model.Image)"/>
                     <div class="p--oversized padding-b25">
-                    <p style="font-family:'Arial,sans-serif';font-size:larger;">
-                        Real Estate was established in 1970.This company was formed keeping in mind the growing desires of the people and the demand to owe own house. No one better than us could have capture the dreams and requirements of the people of Pakistan. Real we are committed to developing projects modified to the needs of the market and the expectations of our clients and partners, whilst at the same time enriching these projects with our vision, aims, and values. conclusion, please allow our extensive knowledge of real estate and our experienced staff to assist you with whatever your needs may be. From rentals to property management, we are fully equipped to handle all of your real estate needs.
-
-                        Real Estate was established in 1970.This company was formed keeping in mind the growing desires of the people and the demand to owe own house. No one better than us could have capture the dreams and requirements of the people of Pakistan. Real we are committed to developing projects modified to the needs of the market and the expectations of our clients and partners, whilst at the same time enriching these projects with our vision, aims, and values. conclusion, please allow our extensive knowledge of real estate and our experienced staff to assist you with whatever your needs may be. From rentals to property management, we are fully equipped to handle all of your real estate needs.
-
-                        Real Estate was established in 1970.This company was formed keeping in mind the growing desires of the people and the demand to owe own house. No one better than us could have capture the dreams and requirements of the people of Pakistan. Real we are committed to developing projects modified to the needs of the market and the expectations of our clients and partners, whilst at the same time enriching these projects with our vision, aims, and values. conclusion, please allow our extensive knowledge of real estate and our experienced staff to assist you with whatever your needs may be. From rentals to property management, we are fully equipped to handle all of your real estate needs.
-
-                        Real Estate was established in 1970.This company was formed keeping in mind the growing desires of the people and the demand to owe own house. No one better than us could have capture the dreams and requirements of the people of Pakistan.
-                    </p>
+                    <p style="font-family:'Arial,sans-serif';font-size:larger;">@Model.Description </p>
                 </div>
-                @*<p style="clear:both;font-family:'Monotype Corsiva';font-size:larger;">*@
-                <p style="font-family:'Arial,sans-serif';font-size:larger;">
-                    Real we are committed to developing projects modified to the needs of the market and the expectations of our clients and partners, whilst at the same time enriching these projects with our vision, aims, and values.
-
-                    conclusion, please allow our extensive knowledge of real estate and our experienced staff to assist you with whatever your needs may be. From rentals to property management, we are fully equipped to handle all of your real estate needs.
-                </p>
             </div>
         </div>
-    </div>
-
-
-
+    </div>    
 </body>

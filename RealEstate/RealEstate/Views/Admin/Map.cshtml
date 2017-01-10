@@ -48,7 +48,8 @@ $(document).ready(function(){
     </div>
     <div class="maps_container">
 
-        <div class="propertySearch">
+        <div class="propertyS
+             earch">
             Property Search
             <hr style="height:5px;border:none;color:#333;background-color:#333;margin-top:0px;" />
             <div class="search_detail">
@@ -138,58 +139,58 @@ $(document).ready(function(){
             <hr style="height:5px;border:none;color:#333;background-color:#333;margin-top:0px;" />
 
         </div>
-        
+
         <div class="mapspics">
 
-        @foreach (var item in Model)
-        {
-            <div class="Card">
-                <a href="#" class="open">@item.Title</a><br />
-                <a href="#" class="open">
-                 <img src="~/images/4.jpg" width="240" height="140" frameborder="0" style="border:0" allowfullscreen/>      
+            @foreach (var item in Model)
+            {
+                <div class="Card">
+                    <a href="#" class="open">@item.Title</a><br />
+                    <a href="#" class="open">
+                        <img src="~/images/4.jpg" width="240" height="140" frameborder="0" style="border:0" allowfullscreen />
                     </a><input type="button" value="Update">
-            </div>
+                </div>
 
 
 
               <!--Dialogue Box for Update Maps-->
-            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Update History
-            </button>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">Update Map</h4>
-                        </div> <!-- /.modal-header -->
-                        <div class="modal-body">
-                            <form role="form" action="" method="post" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="title" style="width:539px;margin-bottom:15px" value="@Model.Title">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Update History
+                </button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="myModalLabel">Update Map</h4>
+                            </div> <!-- /.modal-header -->
+                            <div class="modal-body">
+                                <form role="form" action="" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="title" style="width:539px;margin-bottom:15px" value="@Model.Title">
+                                        </div>
+                                        <div class="input-group">
+                                            <textarea rows="8" name="description" style="width:539px"></textarea>
+                                        </div>
+                                        Upload Image : <input type="file" name="image" />
                                     </div>
-                                    <div class="input-group">
-                                        <textarea rows="8" name="description" style="width:539px"></textarea>
+                                    <div class="modal-footer">
+                                        <button class="form-control btn btn-primary" type="submit">Update</button>
                                     </div>
-                                    Upload Image : <input type="file" name="image" />
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="form-control btn btn-primary" type="submit">Update</button>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        }
+            }
             @*<div class="Card">
-                <a href="#" class="open">Lahore</a><br />
-                <a href="#" class="open">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </a><input type="button" value="Canal View Society">
-            </div>*@
+                    <a href="#" class="open">Lahore</a><br />
+                    <a href="#" class="open">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.599093010087!2d74.25116981262524!3d31.48021275943514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190239b59b9e35%3A0xb0905dc2027042ab!2sLondon+Academic+Plan+School+Canal+View!5e0!3m2!1sen!2s!4v1478296675189" width="240" height="140" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </a><input type="button" value="Canal View Society">
+                </div>*@
 
 
             <div style="clear:both"></div>
@@ -199,10 +200,8 @@ $(document).ready(function(){
         <!--Maps Ending-->
     </div>
 
-            
+
 
 </body>
 
 </html>
-
-

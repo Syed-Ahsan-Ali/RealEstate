@@ -1,0 +1,14 @@
+﻿@model ICollection<RealEstate.Address>
+
+@{
+    ViewBag.Title = "OurHistory";
+}
+
+@foreach (var item in Model)
+{
+    <p>item.Area_Name                   <a>Edit</a>     <a>Delete</a></p>
+    <p>@item.City                       <a>Edit</a>     <a>Delete</a></p>
+    <p>@item.Property_Adress_Id         <a>Edit</a>     <a>Delete</a></p>
+    <p>@item.Property_Name              <a>Edit</a>     <a>Delete</a></p>
+    <hr>
+}
