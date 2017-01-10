@@ -11,11 +11,11 @@ namespace RealEstate.Controllers
    
     public class AdminController : Controller
     {
-        EstateDbEntities1 db = new EstateDbEntities1();
+        EstateDbEntities3 obj = new EstateDbEntities3();
         // GET: Admin
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index","Admin");
         }
         public ActionResult Agent()
         {
@@ -43,11 +43,11 @@ namespace RealEstate.Controllers
                     string img = @"~\images\" + file.FileName;
                     file.SaveAs(Server.MapPath(img));
 
-                    History h = db.Histories.First();
+                    History h = obj.Histories.First();
                     h.Title = Request["title"];
                     h.Description = Request["description"];
                     h.Image = @"~/images/" + file.FileName; ;
-                    db.SaveChanges();
+                    obj.SaveChanges();
                 }
 
             }
@@ -68,11 +68,11 @@ namespace RealEstate.Controllers
 
         public ActionResult History()
         {
-            return View(db.Histories.First());
+            return View(obj.Histories.First());
         }
         public ActionResult Map()
         {
-            return View(db.Maps.ToList());
+            return View(obj.Maps.ToList());
         }
         public ActionResult OurTeam()
         {
