@@ -1,7 +1,11 @@
-﻿
+﻿@model IEnumerable<RealEstate.Agent>
+
 @{
     ViewBag.Title = "Agent";
 }
+
+
+
 
 
 @*<style>
@@ -134,65 +138,171 @@
         </div>
     </div>*@
 
-<body style="background-color:mintcream;"
+<body style="background-color:mintcream;">
+</body>
+
 <div class="main">
     <div class="header">
-        <img src="~/images/p1.jpg" width="1140" height="170">
+        <img src="~/images/h3.jpg" width="1350" height="170">
     </div>
 </div>
 
 <br />
+@foreach (var v in Model)
+{
 
+  <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="single-agent">
+                    <div class="counts pull-right">
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="single-agent">
-                <div class="counts pull-right">
-                    
-                </div>
-                <h2 class="page-title" style="color:cornflowerblue;">Atif Iqbal</h2> 
-                @*<div class="well-lg">*@ 
-                                        <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <img src="http://chohanestate.com/wp-content/uploads/2014/12/Muhammad-Atif-Iqbal.jpg" alt="Atif Iqbal" class="img-thumbnail">
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <p>Having an experience of 9 years in Banking &amp; 4 year’s in A/C’s &amp; Audit is known for his enthusiastic approach, leadership skills and never-ending energy. He completed his Master’s in Commerce from Hailey College Punjab University and became an ACCA member from UK. Mr. Atif is a former VP of Bank Al-Falah. He has incredible aptitude to successfully manage a large real estate company in terms of profits, production, technological leadership, company culture and a joyful, generous approach to work and life. As operating principal, his vision and leadership have grown the market to one of the region’s most productive and profitable centre.</p>
-                    </div>
-                </div>
-                    @*</div>*@
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="agent-contact-details">
-                            <h4>Contact Details</h4>
-                            <ul class="list-group">
-                                <li class="list-group-item"> <span class="badge">+92 302 8444 706</span> Mobile Phone </li>
-                                <li class="list-group-item"> <span class="badge">+92 42 111 124 124</span> Work Phone</li>
-                                <li class="list-group-item"> <span class="badge">atif@chohanestate.com</span> Email </li>
-                                <li class="list-group-item">
-                                
-                                    <a href="https://www.facebook.com" target="_blank"><img src="~/images/twitter.png" height="20"></a>
-                                    <a href="https://www.facebook.com" target="_blank"><img src="~/images/facebook.png" height="20"></a>
-                                    <a href="https://www.facebook.com" target="_blank"><img src="~/images/google_32.png" height="20"></a>
-                                
-                                    @*<div class="social-icons"><a href="https://www.facebook.com/ChohanEstatePk" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://plus.google.com/+ChohanEstateLahore/about" target="_blank"><i class="fa fa-google-plus"></i></a>	  </div>*@
-                                </li>
-                            </ul>
+                    <h2 class="page-title" style="color:cornflowerblue;">@v.Name</h2>
+                    @*<div class="well-lg">*@
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <img src=@v.Picture alt="Atif Iqbal" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <p>@v.About_Agent</p>
                         </div>
                     </div>
+                    @*</div>*@
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="agent-contact-details">
+                                <h4>Contact Details</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"> <span class="badge">@v.Phone_Number</span> Mobile Phone </li>
+                                    <li class="list-group-item"> <span class="badge">@v.Office_Number</span> Work Phone</li>
+                                    <li class="list-group-item"> <span class="badge">@v.Email</span> Email </li>
+                                    <li class="list-group-item">
+
+                                        <a href="https://www.facebook.com" target="_blank"><img src="~/images/twitter.png" height="20"></a>
+                                        <a href="https://www.facebook.com" target="_blank"><img src="~/images/facebook.png" height="20"></a>
+                                        <a href="https://www.facebook.com" target="_blank"><img src="~/images/google_32.png" height="20"></a>
+
+                                        @*<div class="social-icons"><a href="https://www.facebook.com/ChohanEstatePk" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://plus.google.com/+ChohanEstateLahore/about" target="_blank"><i class="fa fa-google-plus"></i></a>	  </div>*@
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div>
-    
-    <div class="row">
-        <h4 style="color:#0033CC">Post your property in Real Estate We do not deal with fake property</h4>
-        
-        <p>
-          
-            <a href="Postproperty" ><img src="http://chohanestate.com/wp-content/uploads/2014/06/post2.png" alt="post2" class="alignnone size-full wp-image-10552" /></a>
-    </p>
-        
 
+        </div>
     </div>
+}
+<div class="row">
+    <h4 style="color:#0033CC">Post your property in Real Estate We do not deal with fake property</h4>
+
+    <p>
+
+        <a href="Postproperty"><img src="http://chohanestate.com/wp-content/uploads/2014/06/post2.png" alt="post2" class="alignnone size-full wp-image-10552" /></a>
+    </p>
+
+
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">Log in</h4>
+            </div> <!-- /.modal-header -->
+
+            <div class="modal-body">
+                <form role="form" action="/Home/Agentadded" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="name" placeholder="Agent Name" style="width:435px">
+                        </div>
+                        <div class="input-group">
+                         <input type="text" class="form-control" name="email" placeholder="Email" style="width:435px;margin-top:15px">
+                        </div> 
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="phone" placeholder="Phone No" style="width:435px;margin-top:15px">
+                        </div> 
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="officeNo" placeholder="Office No" style="width:435px;margin-top:15px">
+                        </div> 
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="adress" placeholder="Adress" style="width:435px;margin-top:15px">
+                        </div> 
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="cnic" placeholder="CNIC" style="width:435px;margin-top:15px">
+                        </div>
+                        <p><strong>Upload Picture &nbsp;&nbsp;</strong><span class="wpcf7-form-control-wrap file-963"><input type="file" name="file-963" value="1" size="40" class="wpcf7-form-control wpcf7-file" aria-invalid="false" /></span></p>
+                    </div>
+
+                    
+
+
+                    @*<div class="wpcf7" id="wpcf7-f9183-p9344-o1" lang="en-US" dir="ltr">
+                        <div class="screen-reader-response"></div>
+                        <form name="" action="~/Home/Agentadded" method="post" class="wpcf7-form" enctype="multipart/form-data" novalidate="novalidate">
+                            <div style="display: none;">
+                                <input type="hidden" name="_wpcf7" value="9183" />
+                                <input type="hidden" name="_wpcf7_version" value="4.1.1" />
+                                <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f9183-p9344-o1" />
+                                <input type="hidden" name="_wpnonce" value="dbabd527e4" />
+                            </div>
+                            <p>
+                                <strong>Agent Name </strong>(required)<br />
+                                <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span>
+                            </p>
+                            <p>
+                                <strong>Agent Email</strong> (required)<br />
+                                <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span>
+                            </p>
+                            <p>
+                                <strong>Agent phone No.</strong>(required)<br />
+                                <span class="wpcf7-form-control-wrap text-502"><input type="text" name="text-502" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span>
+                            </p>
+                            <p>
+                                <strong>OFFice Number</strong>(required)<br />
+                                <span class="wpcf7-form-control-wrap text-502"><input type="text" name="text-503" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span>
+                            </p>
+                            <p>
+                                <strong>About You </strong>(required)<br />
+                                <span class="wpcf7-form-control-wrap your-name"><textarea name="about_you" value="" cols="15" rows="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></textarea></span>
+                            </p>
+
+                            <p>
+                                <strong>Address</strong><br />
+                                <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" /></span>
+                            </p>
+                            <p>
+                                <strong>CNIC</strong><br />
+                                <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-Cnic" value="" size="60" class="wpcf7-form-control wpcf7-text" aria-invalid="false" /></span>
+                            </p>
+                            <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+                            <div class="wpcf7-response-output wpcf7-display-none"></div>
+                        </form>
+                    </div>*@
+
+                    <div class="modal-footer">
+                        <button class="form-control btn btn-primary" type="submit">Ok</button>
+                    </div>
+                    @*<div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+                                <span class="sr-only">progress</span>
+                            </div>
+                        </div>*@
+                    <!-- /.modal-footer -->
+
+                </form>
+
+            </div> <!-- /.modal-body -->
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add Agent
+</button>
