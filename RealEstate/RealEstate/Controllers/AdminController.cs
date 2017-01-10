@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace RealEstate.Controllers
 {
+   
     public class AdminController : Controller
     {
+        EstateDbEntities1 db = new EstateDbEntities1();
         // GET: Admin
         public ActionResult Index()
         {
@@ -29,13 +33,46 @@ namespace RealEstate.Controllers
         {
             return View();
         }
+        public ActionResult UpdateHistoryPage(int id)
+        {
+            try
+            {
+                if (Request.Files.Count > 0)
+                {
+                    HttpPostedFileBase file = Request.Files[0];
+                    string img = @"~\images\" + file.FileName;
+                    file.SaveAs(Server.MapPath(img));
+
+                    History h = db.Histories.First();
+                    h.Title = Request["title"];
+                    h.Description = Request["description"];
+                    h.Image = @"~/images/" + file.FileName; ;
+                    db.SaveChanges();
+                }
+
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var validationErrors in e.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}",
+                                                validationError.PropertyName,
+                                                validationError.ErrorMessage);
+                    }
+                }
+            }
+            return RedirectToAction("History", "Home");
+        }
+
         public ActionResult History()
         {
-            return View();
+            return View(db.Histories.First());
         }
         public ActionResult Map()
         {
-            return View();
+            return View(db.Maps.ToList());
         }
         public ActionResult OurTeam()
         {
