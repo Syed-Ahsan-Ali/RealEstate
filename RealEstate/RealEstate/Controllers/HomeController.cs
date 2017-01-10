@@ -10,18 +10,20 @@ namespace RealEstate.Controllers
 {
     public class HomeController : Controller
     {
-        EstateDbEntities1 db = new EstateDbEntities1();
+        EstateDbEntities3 obj = new EstateDbEntities3();
+       
+     
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Login(string Uname="admin",string password="admin")
+        public ActionResult Login()
         {
 
-            //string Uname = Request["uname"];
-            //string password = Request["pswd"];
-            var r=db.Users.Where(x => x.UserName == Uname && x.Password == password).FirstOrDefault();
-            if (r != null)
+            string Uname = Request["uname"];
+            string passwod = Request["pswd"];
+            //var r = obj.Users.Where(x => x.UserName == Uname && x.Password == password).FirstOrDefault();
+            if (Uname != null)
             {
                 return RedirectToAction("Index", "Admin");
             }
@@ -44,17 +46,17 @@ namespace RealEstate.Controllers
                 if (Request.Files.Count > 0)
                 {
                     HttpPostedFileBase file = Request.Files[0];
-                    string img = @"~\images\" + file.FileName;
-                    file.SaveAs(Server.MapPath(img));
+        string img = @"~\images\" + file.FileName;
+        file.SaveAs(Server.MapPath(img));
 
-                    History h = db.Histories.First();
-                    h.Title = Request["title"];
+                    History h = obj.Histories.First();
+        h.Title = Request["title"];
                     h.Description = Request["description"];
                     h.Image = @"~/images/" + file.FileName; ;
-                    db.SaveChanges();
+                    obj.SaveChanges();
                 }
-                
-            }catch(DbEntityValidationException e)
+
+}catch(DbEntityValidationException e)
             {
                 foreach (var validationErrors in e.EntityValidationErrors)
                 {
@@ -72,19 +74,19 @@ namespace RealEstate.Controllers
 
         public ActionResult History()
         {
-             return View(db.Histories.First());
+            return View(obj.Histories.First());
         }
         public ActionResult OurHistory()
         {
-            ICollection<Address> test = db.Addresses.ToList();
+            ICollection<Address> test = obj.Addresses.ToList();
             return View(test);
         }
         public ActionResult UpdateHistory(int id=1)
         {
-        //    var item = db.Addresses.FirstOrDefault(c=>c.Property_Adress_Id==id);
-        //    item.Property_Name = "Scoter";
-        //    db.Addresses.Update(item);
-        //    db.SaveChanges();
+           // var item = obj.Addresses.FirstOrDefault(c => c.Property_Adress_Id == id);
+           // item.Property_Name = "Scoter";
+          //  obj.Addresses.Update(item);
+         //   obj.SaveChanges();
             return View();
         }
         public ActionResult OurTeam()
@@ -94,7 +96,7 @@ namespace RealEstate.Controllers
 
         public ActionResult Agent()
         {
-            return View();
+            return View(obj.Agents.ToList());
         }
         public ActionResult Agents()
         {
@@ -129,15 +131,78 @@ namespace RealEstate.Controllers
         }
         public ActionResult Map()
         {
-                return View(db.Maps.ToList());
+            return View(obj.Maps.ToList());
         }
-       public ActionResult Blog()
+        public ActionResult Blog()
         {
             return View();
         }
         public ActionResult Chat()
         {
             return View();
+        }
+
+
+        public ActionResult AddAgent()
+        {
+
+
+            return View();
+        }
+
+        /*ACTION METHOD TO ADD AGENT TO DATABASE*/
+        public ActionResult Agentadded()
+        {
+            try
+            {
+                Agent agent = new Agent();
+
+                agent.Name = Request["name"];
+                agent.Email = Request["email"];
+                agent.Phone_Number = Convert.ToInt64(Request["phone"]);
+                agent.CNIC = Convert.ToInt64(Request["cnic"]);
+                agent.Address = Request["adress"];
+                agent.Office_Number = Convert.ToInt64(Request["officeNo"]);
+                agent.About_Agent = "Nice";
+
+                HttpPostedFileBase file = Request.Files[0];
+                agent.Picture = @"/Images/Agent/" + file.FileName;
+                string img = @"~\Images\Agent\" + file.FileName;
+                obj.Agents.Add(agent);
+                file.SaveAs(Server.MapPath(img));
+
+                obj.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var validationErrors in e.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}",
+                                                validationError.PropertyName,
+                                                validationError.ErrorMessage);
+                    }
+                }
+            }
+
+
+            return RedirectToAction("Agent");
+        }
+
+        /*Action Method for displying AGENT PANEL  to admin*/
+
+        public ActionResult AgentPanel()
+        {
+            return View(obj.Agents.ToList());
+        }
+
+        public ActionResult DeleteAgent(int id)
+        {
+            Agent agent = obj.Agents.First(x => x.Id == id);
+            obj.Agents.Remove(agent);
+            obj.SaveChanges();
+            return View("AgentPanel");
         }
 
     }
