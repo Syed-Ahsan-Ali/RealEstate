@@ -11,11 +11,11 @@ namespace RealEstate.Controllers
    
     public class AdminController : Controller
     {
-        EstateDbEntities3 obj = new EstateDbEntities3();
+        EstateDbEntities1 obj = new EstateDbEntities1();
         // GET: Admin
         public ActionResult Index()
         {
-            return RedirectToAction("Index","Admin");
+            return View();
         }
         public ActionResult Agent()
         {
@@ -78,5 +78,7 @@ namespace RealEstate.Controllers
         {
             return View();
         }
+
+        
     }
 }
